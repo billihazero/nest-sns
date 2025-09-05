@@ -63,7 +63,12 @@ export class PostsService {
     return post;
   }
 
-  updatePost(postId: number, author: string, title: string, content: string) {
+  updatePost(
+    postId: number,
+    author?: string,
+    title?: string,
+    content?: string,
+  ) {
     const post = posts.find((post) => post.id === +postId);
     if (!post) {
       throw new NotFoundException();
